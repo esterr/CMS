@@ -5,3 +5,5 @@ class Type(models.Model):
 	description = models.CharField(max_length=300)
 	def __unicode__(self):
 		return self.name
+	def __str__(self):
+		return self.name

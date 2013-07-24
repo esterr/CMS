@@ -37,8 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tmpls',
-    'tmpls_types',
-    'users'
+    'tmpls_types'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -61,7 +60,7 @@ WSGI_APPLICATION = 'cms.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'CMS.db.sqlite3',#os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
