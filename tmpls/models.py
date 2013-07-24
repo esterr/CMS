@@ -7,6 +7,8 @@ class Template(models.Model):
 	name = models.CharField(max_length=300)
 	isPublish = models.BooleanField()
 	ispublic = models.BooleanField()
+	def __unicode__(self):
+		return self.typeid.name
 
 class TemplatesUsers(models.Model):
 	templateid = models.ForeignKey(Template)
