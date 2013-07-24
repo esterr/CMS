@@ -7,7 +7,7 @@ class Template(models.Model):
 	name = models.CharField(max_length=300)
 	isPublish = models.BooleanField()
 	isPublic = models.BooleanField()
-	users = models.ManyToManyField(User)
+	users = models.ManyToManyField(User, null=True)
 
 	def __str__(self):
 		return self.name
