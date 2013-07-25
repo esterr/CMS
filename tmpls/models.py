@@ -10,11 +10,11 @@ class Template(models.Model):
 	content = models.CharField(max_length=500)
 	isPublish = models.BooleanField()
 	isPublic = models.BooleanField()
-	users = models.ManyToManyField(User)
+	users = models.ManyToManyField(User, null=True)
 	
 	def __unicode__(self):
 		return self.name
-	
+
 	def __str__(self):
 		return self.name
 
