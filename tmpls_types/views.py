@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+from tmpls_types.models import Type
+
+def index(request):
+    listTypeTemplate = Type.objects.all()
+    context = {'listTypeTemplate': listTypeTemplate}
+    return render(request, 'tmpls_types/indexBlocks.html', context)

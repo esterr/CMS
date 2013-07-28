@@ -14,7 +14,7 @@ CREATE TABLE "tmpls_template_users" (
     UNIQUE ("template_id", "user_id")
 )
 ;
-CREATE TABLE "tmpls_template" (
+CREATE TABLE "tmpls_template1" (
     "id" integer NOT NULL PRIMARY KEY,
     "templateType_id" integer NOT NULL REFERENCES "tmpls_types_type" ("id"),
     "name" varchar(300) NOT NULL,
@@ -23,4 +23,16 @@ CREATE TABLE "tmpls_template" (
 )
 ;
 
+INSERT INTO "tmpls_template1" SELECT id,templateType_id,name,isPublish,isPublic FROM "tmpls_template";
+
 COMMIT;
+BEGIN TRANSACTION;
+CREATE TABLE "tmpls_template1" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "templateType_id" integer NOT NULL REFERENCES "tmpls_types_type" ("id"),
+    "name" varchar(300) NOT NULL,
+    "content" varchar(500) NOT NULL,
+    "isPublish" bool NOT NULL,
+    "isPublic" bool NOT NULL
+)
+;
